@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+	<title>IT教育网2015课程学习情况</title>
+	<!-- 载入组件资源 -->
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.fullPage.js"></script>
+ 
+	<!-- 加载H5相关资源 -->
+	<script type="text/javascript" src="js/main.min.js">
+		
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- H5对象 -->
+	<script type="text/javascript" src="js/H5.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/H5.css">
+
+	 <script type="text/javascript" src="js/H5_loading.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/H5_loading.css" >
+
+
+    <script type="text/javascript" src="js/H5_loading.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/H5_loading.css" >
+
+	<!-- 页面逻辑及其样式 -->
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.h5_page{
+			background-image: url('imgs/page_bg.png');
+		}
+		.h5_page_face{
+			/*background-image: url('imgs/face_bg.png');*/
+			background-image: none;
+			background-color: #fff;
+		}
+		
+		.h5_component_name_caption{
+			background-image: url('imgs/page_caption_bg.png');
+			width: 283px;
+			height: 160px;
+			text-align: center;
+			line-height: 140px;
+			font-size: 20px;
+
+			color:#fff;
+		}
+		.h5_component_name_slogan{
+			-webkit-animation:rock 2s infinite 2s;
+			color:#555;
+			white-space: 2px;
+			font-size: 20px;
+			text-align: center;
+		}
+		@-webkit-keyframes rock{
+			0%{transform: :rotate(0deg);}
+			5%{transform: :rotate(3deg);}
+			15%{transform: :rotate(-4deg);}
+			20%{transform: :rotate(3deg);}
+			25%{transform: :rotate(-2deg);}
+			30%{transform: :rotate(-1deg);}
+			70%{transform: :rotate(0deg);}
+			100%{transform: :rotate(0deg);}
+		}
+		.h5_component_name_back{
+			top:30px;
+			-webkit-animation:back 2s infinite 2s;
+		}
+		@-webkit-keyframes back{
+			50% {top:20px;}
+		}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			var h5 = new H5();
+			// h5.whenAddPage = function(){
+			// 	this.addComponent('slide_up',{
+			// 	bg:'imgs/footer.png',
+			// 	css:{
+			// 		left:0,
+			// 		bottom:-20,
+			// 		width:'100%',
+			// 		height:'20px',
+			// 		zIndex:999,
+			// 		opacity:0,
+			// 	},
+			// 	animateIn:{
+			// 		opacity:1,
+			// 		bottom:'-1px'
+			// 	},
+			// 	animateOut:{
+			// 		opacity:0,
+			// 		bottom:'-20px'
+			// 	},
+
+			// 	});
+			// }
+
+			h5
+			.addPage('face')
+				.addComponent('logo',{
+					center:true,
+					width:395,
+					height:300,
+					bg:'imgs/sanfu.jpg',
+					css:{opacity:0},
+					animateIn:{top:100,opacity:1},
+					animateOut:{top:0,opacity:0},
+				})
+				.addComponent('slogan',{
+					center:true,
+					width:335,
+					height:99,
+					// bg:'imgs/face_slogan.png',
+					text:'适合年轻人的潮流品牌',
+
+					css:{opacity:0,top:280},
+					animateIn:{left:'50%',opacity:1},
+					animateOut:{left:'0%',opacity:0},
+					delay:500,
+				})
+				.addComponent('face_img_left',{
+					width:200,
+					height:450,
+					bg:'imgs/face_ll.png',
+					css:{opacity:0,left:-50,bottom:-50,},
+					animateIn:{opacity:1,left:0,bottom:0},
+					animateOut:{opacity:0,left:-50,bottom:-50,},
+					delay:1000,
+				})
+				.addComponent('face_img_right',{
+					width:235,
+					height:449,
+					bg:'imgs/face_rl.png',
+					css:{opacity:0,right:-50,bottom:-50,},
+					animateIn:{opacity:1,right:0,bottom:0},
+					animateOut:{opacity:0,right:-50,bottom:-50,},
+					delay:1000,
+				})
+			.addPage()
+				.addComponent('caption',{text:'企业文化'})
+				.addComponent('text',{
+					width:500,
+					height:30,
+					center:true,
+					text:'三福=年轻人的时尚',
+					css:{
+						opacity:0,textAlign:'center',color:'red',fontSize:'26px'
+					},
+					animateIn:{opacity:1,top:120},
+					animateOut:{opacity:0,top:240}
+
+				})
+				.addComponent('description',{
+					center:true,
+					width:481,
+					height:295,
+					bg:'imgs/description_bg.gif',
+					text:'公司使命：让年轻人轻松享受时尚生活——easy life easy fashion 三福将持续了解时代需求，服务社区，创造和谐环境，真诚回报社会。公司期许与能满足顾客需求的供应商共同发展，实现共赢，从而实现品牌价值的最大化。',
+					css:{
+						opacity:0,
+						padding:'14px 10px 10px',
+						color:'#fff',
+						fontSize:'15px',
+						lineHeight:'18px',
+						textAlign:'justify',
+						top:240,
+					},
+					animateIn:{opacity:1,top:190},
+					animateOut:{opacity:0,top:240},
+					delay:500,
+				})
+				.addComponent('people',{
+					center:true,
+					width:515,
+					height:305,
+					bg:'imgs/p1_people.png',
+					css:{
+						bottom:0,
+						opacity:0,
+					},
+					animateIn:{opacity:1,bottom:40},
+					animateOut:{opacity:0,bottom:0},
+					delay:1000,
+
+				})
+			.addPage()
+				.addComponent('caption',{text:'季节销售占比'})//polyline
+				.addComponent('polyline',{
+					type:'polyline',
+					data:[['春',.15,'#ff7676'],
+							['夏',.3],
+							['秋',.2,'blue'],
+							['冬',.35]
+					],
+					width:530,
+					height:300,
+					center:true,
+					css:{top:200},
+					animateIn:{opacity:1,top:200},
+					animateOut:{opacity:0,top:100}
+				})
+				.addComponent('msg',{
+					text:'冬季销售占比达到35%',
+					css:{
+						opacity:0,top:200,
+						textAlign:'center',width:'100%',color:'#ff7676'
+					},
+					animateIn:{opacity:1,top:160},
+					animateOut:{opacity:0,top:100}
+				})
+			.addPage()
+				.addComponent('caption',{text:'经营种类占比分布'})//pie
+				.addComponent('pie',{
+					type:'pie',
+					data:[
+						['女装',.4,'#ff7676'],
+						['男装',.3,'#5ddbd8'],
+						['饰品',.2,'#99c1ff'],
+						['内衣',.1,'#ffad69',20]
+					],
+					css:{top:200},
+					width:300,
+					height:300,
+					center:true
+				})
+				.addComponent('msg',{
+					text:'女装经营占达到40%',
+					css:{
+						opacity:0,bottom:80,
+						textAlign:'center',width:'100%',color:'#ff7676'
+					},
+					animateIn:{opacity:1,bottom:100},
+					animateOut:{opacity:0,top:80}
+				})
+			.addPage()
+				.addComponent('caption',{text:'男装款式销售情况'})//bar (bar_v)
+				.addComponent('bar',{
+					type:'bar',
+					width:530,
+					height:600,
+					data:[
+						['短装',.4,'#ff7676'],
+						['牛仔裤',.15],
+						['衬衫',.1],
+						['卫衣',.2],
+						['毛衣',.1],
+						['短T',.05],
+						['羽绒服',.09]
+					],
+					css:{
+						top:100,
+						opacity:0,
+					},
+					animateIn:{
+						opacity:1,
+						top:200,
+					},
+					animateOut:{
+						opacity:0,
+						top:100,
+					},
+					center:true				
+				})
+				.addComponent('msg',{
+					text:'男装中短装占到40%',
+					css:{
+						opacity:0,bottom:80,
+						textAlign:'center',width:'100%',color:'#ff7676'
+					},
+					animateIn:{opacity:1,bottom:100},
+					animateOut:{opacity:0,top:80}
+				})
+			.addPage()
+				.addComponent('caption',{text:'女装款式销售情况'})//bar (bar_v)
+				.addComponent('bar_v',{
+					type:'bar_v',
+					width:530,
+					height:400,
+					data:[
+						['打底裤',.4,'#ff7676'],
+						['牛仔裤',.2],
+						['单外套',.1],
+						['衬衫',.15],
+						['中T',.05],
+						['毛衣',.15],
+						
+					],
+					css:{
+						top:100,
+						opacity:0,
+					},
+					animateIn:{
+						opacity:1,
+						top:180,
+					},
+					animateOut:{
+						opacity:0,
+						top:100,
+					},
+					center:true				
+				})
+				.addComponent('msg',{
+					text:'女装中打底裤占到40%',
+					css:{
+						opacity:0,bottom:80,
+						textAlign:'center',width:'100%',color:'#ff7676'
+					},
+					animateIn:{opacity:1,bottom:100},
+					animateOut:{opacity:0,top:80}
+				})
+			.addPage()
+				.addComponent('caption',{text:'饰品种类销售情况'})//radar
+				.addComponent('radar',{
+					type:'radar',
+					width:400,
+					height:400,
+					data:[
+						['鞋',0.9,'#ff7676'],
+						['彩妆',0.8,],
+						['护肤',0.7],
+						['包袋',0.3],
+						['用具',0.5]
+					],
+					css:{
+						top:100,
+						opacity:0
+					},
+					animateIn:{
+						opacity:1,
+						top:200,
+					},
+					animateOut:{
+						opacity:0,
+						top:100,
+					},
+					center:true
+				})
+			.addPage()
+				.addComponent('caption',{text:'三福顾客群分布'})//point
+				.addComponent('point',{
+					type:'point',
+					height:300,
+					width:300,
+					data:[
+						['青年',.5,'#ff7676'],
+						['老年',.2,'#ffa3a4',0,'-60%'],
+						['中年',.3,'#99c1ff','50%','-120%']
+					],
+					css:{
+						bottom:'20%'
+					},
+					center:true,
+				})
+				
+			.addPage('tail')
+				.addComponent('logo',{
+					center:true,
+					width:359,
+					height:129,
+					bg:'imgs/sanfu_logo.jpg',
+					css:{top:240,opacity:0},
+					animateIn:{opacity:1,top:210},
+					animateOut:{opacity:0,top:240},
+				})
+				.addComponent('slogan',{
+					center:true,
+					width:314,
+					height:46,
+					bg:'imgs/tail_slogan.png',
+					css:{top:280,opacity:0},
+					animateIn:{opacity:1,left:'50%'},
+					animateOut:{opacity:0,left:'0%'},
+					delay:500
+				})
+				.addComponent('share',{
+					width:128,
+					height:120,
+					bg:'imgs/tail_share.png',
+					css:{top:240,opacity:0},
+					animateIn:{opacity:1,top:10,right:10},
+					animateOut:{opacity:0,top:110,right:110},
+					delay:500
+				})
+				.addComponent('back',{
+					width:52,
+					height:50,
+					bg:'imgs/tail_back.png',
+					center:true,
+					onclick:function(){
+						$.fn.fullpage.moveTo(1);
+					}
+
+				})
+
+
+			.loader([ 'imgs/page_bg.png', 'imgs/page_caption_bg.png','imgs/sanfu.jpg','imgs/face_rl.png','imgs/face_ll.png','imgs/p1_people.png']);
+			
+
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
